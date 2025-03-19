@@ -1,11 +1,11 @@
-#Amigo secreto :smile:
+# Amigo secreto :smile:
 App sencilla para realizar un sorteo; añadiendo nombres a una lista de la cual se elegirá uno al azar
 
-###Funciones
+### Funciones
 
-##Agregar amigo
+## Agregar amigo
 Valida que el nombre no esté vacío y añade el nombre al array **amigos** y actualiza la lista.
-
+ 
 ```function agregarAmigo() {
     let nombre = document.querySelector('#amigo').value.trim();
     if (nombre === '') {
@@ -15,17 +15,19 @@ Valida que el nombre no esté vacío y añade el nombre al array **amigos** y ac
     amigos.push(nombre);
     actualizarLista();
     limpiarCaja();
-}
+} 
+```
 
-##Limpiar campo de Entrada
+##  Limpiar campo de Entrada
 Limpia el campo de texto tras agregar un nombre.
 
 ```function limpiarCaja() {
     document.querySelector('#amigo').value = '';
-}
+} 
+```
 
 
-##Actualizar lista
+## Actualizar lista
 Muestra la lista de amigos y crea un **<li>** por cada amigo en el array.
 
 ```function actualizarLista() {
@@ -37,9 +39,10 @@ Muestra la lista de amigos y crea un **<li>** por cada amigo en el array.
         lista.appendChild(item);
     });
 }
+```
 
 
-##Sortear amigo
+## Sortear amigo
 Finalmente, selecciona un nombre al azar de la lista y lo muestra en la interfaz.
 
 ```function sortearAmigo() {
@@ -50,11 +53,12 @@ Finalmente, selecciona un nombre al azar de la lista y lo muestra en la interfaz
     let amigoSorteado = amigos[Math.floor(Math.random() * amigos.length)];
     document.getElementById('resultado').innerHTML = `El amigo secreto es: ${amigoSorteado}`;
 }
+```
 
 
-###Modo de uso 
+### Modo de uso 
 
 -Abre el archivo HTML en el navegador.
--Escribe el nombre de un amigo y presiona "Agregar Amigo".
+-Escribe el nombre de un amigo y presiona **"Agregar Amigo"**.
 -La lista se actualizará automáticamente.
--Presiona "Sortear Amigo Secreto" para seleccionar un nombre al azar.
+-Presiona **"Sortear Amigo Secreto"** para seleccionar un nombre al azar.
